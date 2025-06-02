@@ -3,8 +3,28 @@
     padding: 0;
 }
 
-h1{
-    background-color: red;
-    color: white;
-    text-align: center;
+.container{
+    display: grid;
+    grid-template: 20vh 80vh / 25vw 75vw;
+    background-color: gray;
+}
+.container>div{
+    border: 1px dotted red;
+}
+.header{
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    background-color: white;
+}
+
+.sidebar{
+    grid-row: 1 / -1;
+    grid-column: 1 / span 1;
+    background-color: blue;
+}
+
+.main{
+    grid-row: 2 / -1;
+    grid-column: 2 / span 1;
+    background-color: green;
 }
