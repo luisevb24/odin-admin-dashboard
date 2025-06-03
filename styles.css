@@ -53,7 +53,24 @@ a:hover {
 .upperheader {
     display: grid;
     grid-template-columns: 1fr 200px;
-    justify-items: center;
+    justify-items: start;
+
+}
+
+
+.searchbar {
+    display: flex;
+    padding: 1rem;
+    gap: 5px;
+    width: 100%;
+}
+
+.searchbar input {
+    width: 80%;
+}
+
+.searchbar svg {
+    width: 1rem;
 }
 
 .lowerheader {
