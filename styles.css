@@ -10,6 +10,9 @@
     --yellow: #e69500;
     --grey: #a7c7b3;
     --dark-blue: #004154;
+    --deep-green: #0b7257;
+    --darker-white: #ded3cb;
+    --beige: #c9b6a9;
 }
 
 li {
@@ -38,9 +41,6 @@ a:hover {
     background-color: gray;
 }
 
-.container>div {
-    border: 1px dotted red;
-}
 
 .header {
     grid-row: 1 / span 1;
@@ -52,8 +52,7 @@ a:hover {
 
 .upperheader {
     display: grid;
-    grid-template-columns: 1fr 200px;
-    justify-items: start;
+    grid-template-columns: 2fr 1fr;
 
 }
 
@@ -66,11 +65,60 @@ a:hover {
 }
 
 .searchbar input {
+    font-size: .75rem;
+    padding: 5px;
     width: 80%;
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--darker-white);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    outline: none;
 }
+
+.searchbar input:focus {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    /* slight upward shift for a subtle effect */
+}
+
+
 
 .searchbar svg {
     width: 1rem;
+}
+
+
+.profilebtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profilebtns svg {
+    width: 1rem;
+    transition: transform 0.1s ease;
+}
+
+.profilebtns svg:hover {
+    transform: translateY(-3px);
+}
+
+.profilebtns img {
+    width: 1.8rem;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    transition: transform 0.1s ease;
+}
+
+.profilebtns img:hover {
+    filter: invert();
+     transform: translateY(-3px);
+}
+
+.profilebtns p {
+    font-size: .8rem;
+    font-weight: 700;
 }
 
 .lowerheader {
@@ -150,5 +198,5 @@ img.logo {
 .main {
     grid-row: 2 / -1;
     grid-column: 2 / span 1;
-    background-color: var(--grey);
+    background-color: var(--deep-green);
 }
