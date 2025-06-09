@@ -38,7 +38,7 @@ a:hover {
 
 .container {
     display: grid;
-    grid-template: 27.5vh 72.5vh / 20vw 80vw;
+    grid-template: 1fr 4fr / 1fr 4fr;
     background-color: gray;
 }
 
@@ -64,13 +64,15 @@ a:hover {
     padding: 1rem;
     gap: 5px;
     width: 100%;
+    align-items: center;
 }
 
 .searchbar input {
     font-family: inherit;
     font-size: .75rem;
-    padding: 5px;
+    padding: 8px;
     width: 80%;
+    height: 1.5rem;
     border: none;
     border-radius: 1rem;
     background-color: var(--darker-white);
@@ -245,9 +247,9 @@ img.logo {
 }
 
 .nav {
-    display: grid;
-    grid-template-rows: 1.5fr 1fr;
-    gap: 1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8vh;
     color: white;
 }
 
@@ -288,16 +290,27 @@ img.logo {
 
 .projectcont {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1rem));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1rem));
     gap: 1rem;
 }
 
 .projectcard {
     background-color: var(--white);
     padding: 10px;
-    width: clamp(220px, 40%, 250px);
+    width: 180px;
+    height: 120px;
     border-radius: 5px;
     border-left: 5px solid var(--yellow);
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.projectcard:hover {
+    background-color: var(--yellow);
+    color: white;
+    transform: translateY(-3px);
 }
 
 .projectitle {
@@ -318,6 +331,15 @@ img.logo {
     padding-top: 10px;
 }
 
+.projectbuttons svg {
+    transition: transform 0.5s ease;
+}
+
+.projectbuttons svg:hover {
+    fill: var(--white);
+    transform: translateY(-3px);
+}
+
 .anncont {
     background-color: var(--white);
     border-radius: 5px;
@@ -333,6 +355,28 @@ img.logo {
     padding: 10px;
     width: 90%;
     border-bottom: 1px solid black;
+    transition: transform 0.3s ease;
+}
+
+.anncard:hover {
+    transform: translateY(-3px);
+}
+
+.anncard:hover .anntitle {
+    font-size: .7rem;
+}
+
+.anncard:hover .anntext {
+    font-size: .65rem;
+}
+
+.anncont:hover .anncard {
+    background-color: var(--yellow);
+    color: white;
+}
+
+.anncont:hover {
+    background-color: var(--yellow);
 }
 
 .anntitle {
@@ -340,10 +384,63 @@ img.logo {
     font-weight: 700;
 }
 
-.anntext{
+.anntext {
     font-size: .5rem;
 }
 
 .anncard:last-child {
     border: none;
+}
+
+
+.trendcard img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.trendcard{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--white);
+    padding: 10px;
+}
+
+.trendcont{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.trendcontact h4,
+.trendcontact p{
+    font-size: .65rem;
+}
+
+.trendcontact{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.trendcard:hover img{ 
+   filter: invert();
+}
+
+.trendcard:hover{
+    color: white;
+    background-color: var(--yellow);
+}
+
+.trendcard:first-of-type{
+    border-start-start-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.trendcard:last-of-type{
+    border-end-start-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
